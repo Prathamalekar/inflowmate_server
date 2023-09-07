@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
 const cors = require('cors');
 app.use(cors());
-const base_url = process.env.base_url
+// const base_url = process.env.base_url
 const port = process.env.PORT || 5000
 
 main().catch(err => console.log(err));
@@ -43,7 +43,7 @@ main();
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
-app.post("https://inflowmate-server-api.onrender.com/login/submit",(req,res)=>{
+app.post("/login/submit",(req,res)=>{
     const Person = mongoose.model('person', formSchema);
     
 
